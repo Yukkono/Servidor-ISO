@@ -1,0 +1,33 @@
+Nota: Hay que usar expresiones regulares, por tanto: egrep o grep -E
+
+Recordatorio: 
+    ^ es el carácter que indica el inicio de la linea
+    $ es el carácter que indica el final de la linea 
+
+1) Muestra todas las lineas que empiezan por: no
+
+Solución: egrep ^no* sample.txt
+
+2) Muestra las lineas que acaban en: it
+
+Solución: egrep *it$ sample.txt
+
+3) Muestra las lineas que contienen la palabra: do
+
+Solución: egrep '^.*?( do ).*?$' sample.txt
+
+4) Muestra las lineas que contienen palabras que empiezan por: do
+
+Solución: egrep '^.*( do.+)+.*$' sample.txt
+
+5) Muestra las lineas que contienen palabras que acaban por: do
+
+Solución: egrep '^.*( \w*do\b).*$' sample.txt
+
+6) Muestra las lineas que empiezan en: ^
+
+Solución: egrep '^\^.*$' sample.txt
+
+7) Muestra las lineas que acaban en: $
+
+Solución: egrep '^.*\$$' sample.txt

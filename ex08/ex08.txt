@@ -1,0 +1,25 @@
+Note: words.txt solo tiene lineas con una palabra, usalo como input cuando el ejercicio pida capturar palabras
+
+Nota: investigar opciones -f y -F
+
+1) Encuentra todas las palabras de words.txt que aparecen en baz.txt
+
+Solución: grep -f words.txt baz.txt
+
+2) Encuentra todas las palabras de words.txt que aparecen en baz.txt
+    solo palabras enteras (-w)
+    solo debe mostra la palabra, no la linea en la que aparece (-o)
+
+Solución: grep -f words.txt -o -w -F baz.txt
+
+3) Muestra las lineas en común entre foo.txt y baz.txt
+
+Solución: grep -f foo.txt -w -F -o baz.txt
+
+4) Muestra las lineas en baz.txt que no están en foo.txt
+
+Solución: grep -F -w -f foo.txt -v baz.txt
+
+5) Muestra las lineas que hay en foo.txt pero no en baz.txt
+
+Solución: grep -f baz.txt -F -v foo.txt
