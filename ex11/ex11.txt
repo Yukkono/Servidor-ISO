@@ -8,40 +8,48 @@
 
 1) Extra las lineas que tienen alguna palabra de 3 carácteres exactamente
 
+Solución: egrep -wo '.{3}' garbled.txt
 
 2) Extrae la cadena mas larga de cada linea que
         empieza por: d
         acaba en  : g
 
+Solución: grep -i -o '^d.*g' garbled.txt
 
 3) Extrae todas las cadenas de cada linea que 
         empiezan por: d
         a continuación 0 o más: o
         acaba en : g
 
+Solución: egrep -i -o 'do*g' garbled.txt
 
 4) Extrae todas las cadenas de cada linea que 
         empiezan por: d
         a continuación 0 o más de cualquier carácter
         acaban en  : g
 
+Solución: egrep -i -o 'd.*g' garbled.txt
 
 5) Extrae todas las cadenas de cada linea que 
         empiezan por: g
         a continuación al menos un: o
         acaban en  : d
 
+Solución: egrep -i -o 'go+d' garbled.txt
 
 6) Extrae todas las cadenas de cada linea que 
         empiezan por : g
         a continuación exactamente 6: o
         acaban en   : d
 
+Solución: egrep -i -o 'go{6}d' garbled.txt
 
 7) Extrae todas las cadenas de cada linea que 
         empiezan por         : g
         seguido de entre 2 y 4: o
         acaban en           : d
+
+Solución: egrep -i -o 'go{2,4}d' garbled.txt
 
 
 8) Extrae todas las cadenas de cada linea que 
@@ -49,9 +57,12 @@
         seguido de como mucho 2 : o
         acaban en  : g
 
+Solución: egrep -i -o 'do{0,2}g' garbled.txt
 
 9) Extrae todas las cadenas de cada linea que 
         empiezan por : g
         seguido de como minimo 3: o
         acaban en   : d
+
+Solución: egrep -i -o 'go{3,999}d' garbled.txt
 
